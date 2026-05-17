@@ -3,7 +3,7 @@
 
 # Allow these files
 !.gitignore
-!next.html
+!index.html
 !style.css
 !images/
 !images/**
