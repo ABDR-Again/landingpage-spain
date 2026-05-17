@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# Allow these files
+!.gitignore
+!next.html
+!style.css
+!images/
+!images/**

@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anabel González Chiropractic ” Pain Relief Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Critical CSS: inlined for instant hero paint -->
+<style>/* ═══════════════════════════════════════════════
+   CRITICAL CSS ” Above-the-fold only
+   Topbar · Hero · Stats strip
+   Loaded inline for fastest first paint
+   ═══════════════════════════════════════════════ */
+
+/* â”€â”€â”€ RESET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* â”€â”€â”€ TOKENS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+:root {
+  --navy:      #0d2d5e;
+  --navy-deep: #071a3e;
+  --blue:      #1a56db;
+  --blue-tint: #e8f0fd;
+  --blue-pale: #f0f5ff;
+  --ink:       #0a0a0a;
+  --muted:     #5c637a;
+  --border:    #e2e6f0;
+  --off-white: #f8f9fc;
+  --gold:      #f59e0b;
+  --green:     #059669;
+}
+
+/* â”€â”€â”€ STICKY TOP BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.topbar {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--navy-deep);
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px; padding: 11px 20px; flex-wrap: wrap;
+  animation: slideDown .4s ease both;
+}
+.topbar-call {
+  display: flex; align-items: center; gap: 9px;
+  color: #fff; text-decoration: none;
+  font-size: 15px; font-weight: 700;
+}
+.topbar-call .ph-wrap {
+  width: 28px; height: 28px; border-radius: 6px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+}
+.topbar-sep { width: 1px; height: 16px; background: rgba(255,255,255,.25); }
+.topbar-stars {
+  display: flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.9); font-size: 14px;
+}
+.stars { color: var(--gold); letter-spacing: 1.5px; font-size: 13px; }
+.topbar-badge {
+  background: var(--gold); color: #7c3a00;
+  font-size: 11px; font-weight: 800;
+  padding: 3px 9px; border-radius: 20px;
+  letter-spacing: .5px; text-transform: uppercase;
+}
+
+/* â”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.hero {
+  min-height: calc(100svh - 51px);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 52px 24px 60px;
+  position: relative; overflow: hidden;
+  background: #fff;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse at center, var(--blue-tint) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+  animation: glowFade 1.2s ease both;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 820px; width: 100%;
+  display: flex; flex-direction: column;
+  align-items: center;
+}
+
+/* Credential line */
+.cred-line {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 28px;
+  animation: fadeUp .5s .1s ease both;
+}
+.cred-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blue); }
+
+/* Headline */
+.headline {
+  font-size: clamp(40px, 11vw, 92px);
+  font-weight: 900; line-height: 1.0;
+  letter-spacing: -3px; color: var(--ink);
+  line-height: 130%;
+  margin-bottom: 24px;
+  animation: fadeUp .55s .15s ease both;
+}
+
+/* Blue chip highlight */
+.hl {
+  display: inline;
+  background: var(--navy); color: #fff;
+  padding: 4px 14px 6px; border-radius: 8px;
+  position: relative;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Subheadline */
+.subheadline {
+  font-size: clamp(17px, 2.8vw, 21px);
+  font-weight: 400; line-height: 1.65;
+  color: var(--muted); max-width: 620px;
+  margin-bottom: 40px;
+  animation: fadeUp .55s .25s ease both;
+}
+.subheadline strong { color: var(--ink); font-weight: 700; }
+.no-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #fff0f0; color: #b91c1c;
+  font-size: .9em; font-weight: 700;
+  padding: 2px 9px; border-radius: 20px;
+  border: 1px solid #fecaca; white-space: nowrap;
+}
+.no-tag svg { flex-shrink: 0; }
+.yes-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #f0fdf4; color: #166534;
+  font-size: .9em; font-weight: 700;
+  padding: 2px 9px; border-radius: 20px;
+  border: 1px solid #bbf7d0; white-space: nowrap;
+}
+
+/* CTA group */
+.cta-group {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  width: 100%; max-width: 520px;
+  margin-bottom: 32px;
+  animation: fadeUp .55s .35s ease both;
+}
+
+/* CALL ” primary */
+.btn-call {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  width: 100%;
+  background: var(--navy); color: #fff; text-decoration: none;
+  padding: 20px 28px; border-radius: 14px;
+  border: none; cursor: pointer;
+  transition: background .2s, transform .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-call:hover { background: var(--navy-deep); transform: translateY(-2px); }
+.btn-call:active { transform: translateY(0); }
+.btn-call::before {
+  content: '';
+  position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.09),transparent);
+  animation: shimmer 3.2s 2s ease-in-out infinite;
+}
+.btn-call::after {
+  content: '';
+  position: absolute; inset: -3px;
+  border-radius: 17px; border: 2px solid var(--navy);
+  opacity: 0;
+  animation: pulseRing 2.4s 1.5s ease-out infinite;
+}
+.call-icon-wrap {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.call-text { display: flex; flex-direction: column; text-align: left; }
+.call-instruction {
+  font-size: 11px; font-weight: 600; opacity: .75;
+  letter-spacing: 1.8px; text-transform: uppercase;
+  line-height: 1; margin-bottom: 3px;
+}
+.call-number {
+  font-size: 22px; font-weight: 800;
+  letter-spacing: -.5px; line-height: 1.1;
+}
+.call-arrow {
+  margin-left: auto; opacity: .6; flex-shrink: 0;
+  transition: transform .2s;
+}
+.btn-call:hover .call-arrow { transform: translateX(4px); opacity: 1; }
+
+/* BOOK ” secondary */
+.btn-book {
+  display: flex; align-items: center; justify-content: center; gap: 11px;
+  width: 100%;
+  background: #fff; color: var(--navy);
+  text-decoration: none;
+  padding: 18px 28px; border-radius: 14px;
+  border: 2px solid var(--navy);
+  font-size: 17px; font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-book:hover { background: var(--blue-tint); transform: translateY(-2px); }
+.btn-book:active { transform: translateY(0); }
+
+/* Trust micro */
+.trust-micro {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 8px 22px;
+  animation: fadeUp .55s .45s ease both;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 14px; font-weight: 500; color: var(--muted);
+}
+.trust-item svg { color: var(--green); flex-shrink: 0; }
+
+/* â”€â”€â”€ STATS STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.stats-strip {
+  background: var(--navy);
+  display: grid; grid-template-columns: repeat(3,1fr);
+  text-align: center;
+}
+.stat-cell {
+  padding: 26px 12px;
+  border-right: 1px solid rgba(255,255,255,.1);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-num {
+  font-size: clamp(26px,6vw,40px);
+  font-weight: 900; color: #fff;
+  line-height: 1; letter-spacing: -1px;
+}
+.stat-suf { font-size: .62em; font-weight: 700; vertical-align: super; }
+.stat-label {
+  font-size: 11px; font-weight: 600;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase; letter-spacing: 1.2px; line-height: 1.3;
+}
+
+/* â”€â”€â”€ DESKTOP ENHANCEMENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (min-width: 768px) {
+  .cta-group { flex-direction: column; max-width: 580px; }
+  .btn-call, .btn-book { flex: 1; }
+}
+
+/* â”€â”€â”€ SCROLL REVEAL (shared) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* â”€â”€â”€ KEYFRAMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@keyframes slideDown  { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeUp     { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes glowFade   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes shimmer    { 0%,100% { left: -100%; } 50% { left: 130%; } }
+@keyframes pulseRing  { 0% { opacity: .6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.1); } }
+@keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes blink      { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes pulse      { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
+</style>
+<!-- Deferred CSS: loads after hero -->
+<link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
+</head>
+<body>
+
+<!-- â”€â”€â”€ TOP BAR â”€â”€â”€ -->
+<div class="topbar" role="banner">
+  <a href="tel:+34625040584" class="topbar-call" aria-label="Call 625 04 05 84">
+    <span class="ph-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 18.85a19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.72 2h3a2 2 0 012 1.72c.13.96.36 1.9.66 2.81a2 2 0 01-.45 2.11L8.83 9.56A16 16 0 0015 15.64l1.1-1.1a2 2 0 012.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0122 16.92z"/></svg>
+    </span>
+    625 04 05 84
+  </a>
+  <div class="topbar-sep" aria-hidden="true"></div>
+  <div class="topbar-stars">
+    <span class="stars" aria-label="5 stars"></span>
+    <span>4.9  150 Google Reviews</span>
+  </div>
+  <div class="topbar-sep" aria-hidden="true"></div>
+  <span class="topbar-badge">Same-Week Appointments</span>
+</div>
+
+<!-- â”€â”€â”€ HERO â”€â”€â”€ -->
+<section class="hero" aria-labelledby="main-headline">
+  <div class="hero-inner">
+    <div class="cred-line" aria-label="Doctor credentials">
+      <span class="cred-dot" aria-hidden="true"></span>
+      Anabel González Molera, DC
+      <span class="cred-dot" aria-hidden="true"></span>
+      8 Years in Practice
+      <span class="cred-dot" aria-hidden="true"></span>
+      Esplugues de Llobregat
+      <span class="cred-dot" aria-hidden="true"></span>
+    </div>
+    <h1 class="headline" id="main-headline">
+      Stop Letting Pain<br>
+      <span class="hl">Steal Your Life.</span>
+    </h1>
+    <p class="subheadline">
+      <strong>No medication. No surgery. No waiting months for results.</strong><br>
+      Whether it's your back, neck, shoulders, or head ”
+      we find the root cause and fix it.
+      Most patients feel a difference from their <strong>very first visit.</strong>
+    </p>
+    <div class="cta-group">
+      <a href="tel:+34625040584" class="btn-call" aria-label="Tap this button to call us at 625 04 05 84 ” your phone will dial us immediately">
+        <span class="call-icon-wrap" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 18.85a19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.72 2h3a2 2 0 012 1.72c.13.96.36 1.9.66 2.81a2 2 0 01-.45 2.11L8.83 9.56A16 16 0 0015 15.64l1.1-1.1a2 2 0 012.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0122 16.92z"/></svg>
+        </span>
+        <span class="call-text">
+          <span class="call-instruction">Tap to Call Us Now</span>
+          <span class="call-number">625 04 05 84</span>
+        </span>
+        <svg class="call-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2&" class="btn-book" aria-label="Book your visit online">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Your Visit Online
+      </a>
+    </div>
+    <div class="trust-micro" aria-label="Reassurances">
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        No commitment required
+      </span>
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Insurance accepted
+      </span>
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Same-week appointments
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€â”€ STATS STRIP â”€â”€â”€ -->
+<div class="stats-strip reveal" role="region" aria-label="Practice statistics">
+  <div class="stat-cell">
+    <div class="stat-num">700<span class="stat-suf">+</span></div>
+    <div class="stat-label">Patients<br>Treated</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">8<span class="stat-suf">yrs</span></div>
+    <div class="stat-label">Years in<br>Practice</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">4.9<span class="stat-suf">★</span></div>
+    <div class="stat-label">Google<br>Rating</div>
+  </div>
+</div>
+
+<!-- â”€â”€â”€ TESTIMONIAL TICKER â”€â”€â”€ -->
+<div class="ticker-wrap reveal" role="region" aria-label="Scrolling patient reviews">
+  <div class="ticker-label" aria-hidden="true">Real Patients</div>
+  <div class="ticker-track" aria-hidden="true">
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">James R.</span>&nbsp;"Back pain gone after 2 visits."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Linda K.</span>&nbsp;"Finally sleeping through the night."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">David M.</span>&nbsp;"Best decision I've ever made for my health."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Susan H.</span>&nbsp;"4 years of neck pain ” resolved in 3 sessions."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Robert T.</span>&nbsp;"Same-day appointment. Walked out standing straight."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Carol B.</span>&nbsp;"Trusted Anabel González for 8 years."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Tom W.</span>&nbsp;"First visit at 68. Wish I'd come years earlier."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Patricia N.</span>&nbsp;"No more daily headaches. Life-changing."</div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">James R.</span>&nbsp;"Back pain gone after 2 visits."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Linda K.</span>&nbsp;"Finally sleeping through the night."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">David M.</span>&nbsp;"Best decision I've ever made for my health."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Susan H.</span>&nbsp;"4 years of neck pain ” resolved in 3 sessions."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Robert T.</span>&nbsp;"Same-day appointment. Walked out standing straight."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Carol B.</span>&nbsp;"Trusted Anabel González for 8 years."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Tom W.</span>&nbsp;"First visit at 68. Wish I'd come years earlier."</div>
+    <div class="ticker-item"><span class="t-stars">★★★★★</span><span class="t-name">Patricia N.</span>&nbsp;"No more daily headaches. Life-changing."</div>
+  </div>
+</div>
+
+<!-- â”€â”€â”€ PAIN QUIZ â”€â”€â”€ -->
+<section class="quiz-section reveal" id="quiz" aria-labelledby="quiz-title">
+  <div class="quiz-eyebrow">30-Second Pain Assessment</div>
+  <h2 class="quiz-title" id="quiz-title">Where does it hurt?<br>Let us tell you how we can help.</h2>
+  <p class="quiz-sub">Answer 3 quick questions and get a personalised recommendation ” no obligation, no spam.</p>
+  <div class="quiz-progress" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+    <div class="quiz-progress-fill" id="prog" style="width:33%"></div>
+  </div>
+  <div class="quiz-step active" id="step1">
+    <div class="quiz-step-label">Question 1 of 3</div>
+    <div class="quiz-q">Where is your main pain right now?</div>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-key="loc" data-val="Lower Back" data-next="2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Lower Back
+      </button>
+      <button class="quiz-opt" data-key="loc" data-val="Neck / Shoulders" data-next="2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="14" x2="9" y2="20"/><line x1="12" y1="14" x2="15" y2="20"/></svg>
+        Neck / Shoulders
+      </button>
+      <button class="quiz-opt" data-key="loc" data-val="Hip / Sciatica" data-next="2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l3 3 3-3"/><line x1="12" y1="2" x2="12" y2="21"/></svg>
+        Hip / Sciatica
+      </button>
+      <button class="quiz-opt" data-key="loc" data-val="Headaches" data-next="2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        Headaches
+      </button>
+    </div>
+  </div>
+  <div class="quiz-step" id="step2">
+    <div class="quiz-step-label">Question 2 of 3</div>
+    <div class="quiz-q">How long have you had this pain?</div>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-key="dur" data-val="A few days" data-next="3">A few days</button>
+      <button class="quiz-opt" data-key="dur" data-val="A few weeks" data-next="3">A few weeks</button>
+      <button class="quiz-opt" data-key="dur" data-val="Several months" data-next="3">Several months</button>
+      <button class="quiz-opt" data-key="dur" data-val="Years" data-next="3">Years</button>
+    </div>
+  </div>
+  <div class="quiz-step" id="step3">
+    <div class="quiz-step-label">Question 3 of 3</div>
+    <div class="quiz-q">What matters most to you right now?</div>
+    <div class="quiz-opts">
+      <button class="quiz-opt" data-result="relief">Fast pain relief</button>
+      <button class="quiz-opt" data-result="sleep">Sleep better at night</button>
+      <button class="quiz-opt" data-result="move">Move without limits</button>
+      <button class="quiz-opt" data-result="avoid">Avoid surgery or meds</button>
+    </div>
+  </div>
+  <div class="quiz-result" id="quiz-result" role="region" aria-live="polite">
+    <div class="result-eyebrow">Your Personalised Recommendation</div>
+    <div class="result-title" id="result-title"></div>
+    <div class="result-body" id="result-body"></div>
+    <div class="result-cta-group">
+      <a href="tel:+34625040584" class="result-btn-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 18.85a19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.72 2h3a2 2 0 012 1.72c.13.96.36 1.9.66 2.81a2 2 0 01-.45 2.11L8.83 9.56A16 16 0 0015 15.64l1.1-1.1a2 2 0 012.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0122 16.92z"/></svg>
+        Call Now ” 625 04 05 84
+      </a>
+      <a href="https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2&" class="result-btn-book">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book My Visit Online
+      </a>
+    </div>
+  </div>
+</section>
+<!-- â”€â”€â”€ SOCIAL PROOF â”€â”€â”€ -->
+<section class="sec sec--white sp-section" aria-labelledby="sp-heading">
+  <div class="sp-text">
+    <h2 class="sp-heading" id="sp-heading">
+      This Is What<br>
+      <span class="chip">Freedom From Pain</span><br>
+      Feels Like.
+    </h2>
+    <p class="sp-sub">
+      See real patients describe life
+      <strong>before and after</strong> their first visit.
+      <span class="tag">No surgery</span>
+      <span class="tag">No medication</span>
+      <span class="tag">No long waits</span>
+      ” just <strong>hands-on relief</strong> that most people feel
+      from the very first adjustment.
+    </p>
+  </div>
+  <div class="sp-image-wrap" style="width: 80vw; max-width: 1100px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 64px rgba(13,45,94,.22);">
+      <img src="images/optimized/freedom.webp" alt="Chiropractic care results" style="width: 100%; height: auto; display: block; border-radius: 16px; min-height: 300px; background: linear-gradient(160deg, #0d2d5e 0%, #071a3e 55%, #0a0f1e 100%);" />
+    </div>
+  <div class="sp-bottom-bar">
+    <a href="https://share.google/RJOvCiBTa5LTGlaOm" target="_blank" rel="noopener noreferrer" class="sp-google-badge" aria-label="View our Google Business Profile ” 4.9 stars, 340 reviews">
+      <svg class="sp-g-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="8" fill="#fff"/>
+        <path d="M20.4 17.2h9.2c.12.6.18 1.22.18 1.86 0 5.5-3.68 9.4-9.38 9.4A9.73 9.73 0 0110.6 18.8a9.73 9.73 0 019.8-9.68c2.64 0 4.84.96 6.54 2.54l-2.66 2.56c-.74-.7-2.02-1.52-3.88-1.52-3.34 0-6.06 2.76-6.06 6.1s2.72 6.1 6.06 6.1c3.86 0 5.3-2.74 5.52-4.16h-5.52v-3.54z" fill="#4285F4"/>
+        <path d="M10.6 18.8c0 1.18.22 2.3.62 3.32" fill="#34A853"/>
+        <path d="M20.4 28.46c2.6 0 4.78-.86 6.38-2.32l-3.04-2.36c-.84.58-1.92.92-3.34.92-2.56 0-4.74-1.72-5.52-4.04" fill="#FBBC05"/>
+        <path d="M29.78 19.06c0-.64-.06-1.26-.18-1.86" fill="#EA4335"/>
+      </svg>
+      <div class="sp-g-info">
+        <span class="sp-g-title">Google Business Profile</span>
+        <div class="sp-g-rating">
+          <span class="sp-g-stars" aria-hidden="true">★★★★★</span>
+          <span class="sp-g-score">4.9</span>
+          <span class="sp-g-count">(340 reviews)</span>
+        </div>
+        <span class="sp-g-link">
+          View our reviews
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="tel:+34625040584" class="cta-call" aria-label="Tap to call us now at 625 04 05 84">
+      <span class="cta-call-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 18.85a19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.72 2h3a2 2 0 012 1.72c.13.96.36 1.9.66 2.81a2 2 0 01-.45 2.11L8.83 9.56A16 16 0 0015 15.64l1.1-1.1a2 2 0 012.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0122 16.92z"/></svg>
+      </span>
+      <span class="cta-call-text">
+        <span class="cta-call-inst">Tap to Call Us Now</span>
+        <span class="cta-call-num">625 04 05 84</span>
+      </span>
+      <svg class="cta-call-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- â”€â”€â”€ PATIENT GALLERY â”€â”€â”€ -->
+<section class="sec sec--white pg-section" aria-labelledby="pg-heading">
+  <header class="sec-header reveal">
+    <div class="eyebrow">
+      <span class="eyebrow-dot" aria-hidden="true"></span>
+      Patient Stories
+      <span class="eyebrow-dot" aria-hidden="true"></span>
+    </div>
+    <h2 class="sec-heading" id="pg-heading">
+      Real People.<br>Real <span class="chip">Relief.</span>
+    </h2>
+    <p class="sec-sub">
+      A glimpse into the lives of patients who walked in with pain
+      and walked out with their lives back.
+      <strong>No surgery. No medication.</strong> Just results you can see.
+    </p>
+  </header>
+  <div class="pg-grid-wrap">
+    <div class="pg-masonry" role="list" aria-label="Patient photo gallery">
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-treatment-1.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Back pain · Fully recovered</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-treatment-2.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Neck pain · 2 visits</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-treatment-3.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Sciatica · Pain-free in 3 visits</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-neck-treatment.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Headaches · Resolved naturally</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-back-treatment.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Hip pain · Sports injury rehab</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-shoulder-exam.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Posture correction · 4 weeks</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-cervical-treatment.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Shoulder pain · Surgery avoided</span></div>
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/patient-spinal-assessment.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+        <div class="pg-item-overlay" aria-hidden="true"><span class="pg-item-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Disc herniation · Full recovery</span></div>
+      </div>
+    
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/IMG_20240902_130352.jpg.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/image00015.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/image00010.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/image00007.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/image00006.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/image00005.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+      <div class="pg-item reveal" role="listitem">
+        <img src="images/optimized/image00001.webp" alt="Patient treatment" class="pg-img" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+      </div>
+    </div>
+  </div>
+  <div class="pg-bottom-border" role="presentation" aria-hidden="true">
+    <div class="pg-border-seg"></div><div class="pg-border-seg"></div><div class="pg-border-seg"></div><div class="pg-border-seg"></div><div class="pg-border-seg"></div>
+  </div>
+</section>
+<!-- â”€â”€â”€ OFFICE SECTION â”€â”€â”€ -->
+<section class="sec sec--white" aria-labelledby="ofs-heading">
+  <div class="ofs-hero">
+    <div class="ofs-hero-text reveal">
+      <div class="eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Our Clinic
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+      </div>
+      <h2 class="sec-heading" id="ofs-heading" style="font-size:clamp(32px,8vw,56px);letter-spacing:-1.5px">
+        A Place Built<br>For <span class="chip">Healing.</span>
+      </h2>
+      <p class="ofs-sub">
+        From the moment you walk in, you'll feel the difference.
+        <strong>Our clinic is designed around one thing</strong> ” making
+        you feel safe, comfortable, and confident you're in the right hands.
+      </p>
+      <ul class="ofs-features" aria-label="Clinic features">
+        <li class="ofs-feature">
+          <span class="ofs-feature-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="ofs-feature-body"><span class="ofs-feature-title">Comfortable, private treatment rooms</span><span class="ofs-feature-desc">Designed for patient comfort and dignity</span></span>
+        </li>
+        <li class="ofs-feature">
+          <span class="ofs-feature-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <span class="ofs-feature-body"><span class="ofs-feature-title">State-of-the-art equipment</span><span class="ofs-feature-desc">Modern tools for precise, effective treatment</span></span>
+        </li>
+        <li class="ofs-feature">
+          <span class="ofs-feature-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <span class="ofs-feature-body"><span class="ofs-feature-title">Minimal wait times, always on schedule</span><span class="ofs-feature-desc">We respect your time ” appointments start on time</span></span>
+        </li>
+        <li class="ofs-feature">
+          <span class="ofs-feature-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+          <span class="ofs-feature-body"><span class="ofs-feature-title">Friendly, welcoming front desk team</span><span class="ofs-feature-desc">A warm welcome from the moment you arrive</span></span>
+        </li>
+      </ul>
+    </div>
+    <div class="ofs-hero-img" role="img" aria-label="Our clinic reception and treatment area">
+      <div class="ofs-img-hero-ph">
+        <img src="images/optimized/IMG20240830094737.jpg.webp" alt="Adjustment Table" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;">
+      </div>
+      
+    </div>
+  </div>
+  <div class="ofs-gallery">
+    <div class="ofs-gallery-header reveal">
+      <h3 class="ofs-gallery-heading">A Closer Look <span class="chip">Inside.</span></h3>
+      <p class="ofs-gallery-sub">Modern equipment, calm spaces, and a team that puts you first ” from your very first step through the door.</p>
+    </div>
+    <div class="ofs-grid" role="list" aria-label="Office photo gallery">
+      <div class="ofs-grid-cell reveal" role="listitem"><div class="ofs-img-ph" aria-label="Main treatment room"><div class="ofs-img-ph-icon" aria-hidden="true"></div><img src="images/optimized/IMG_20240902_130352.jpg.webp" alt="Adjustment Table" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 12px;"></div><div class="ofs-cell-overlay" aria-hidden="true"><span class="ofs-cell-caption">Main Treatment Room</span></div></div>
+      <div class="ofs-grid-cell reveal" role="listitem"><img src="images/optimized/IMG20240830094600.jpg.webp" alt="Reception Area" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;"><span class="ofs-img-ph-label">Reception Area<br><small style="opacity:.55;font-weight:400">Replace with real photo</small></span></div><div class="ofs-cell-overlay" aria-hidden="true"><span class="ofs-cell-caption">Reception Area</span></div></div>
+     
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     CERTIFICATE SECTION — with real images
+     Anabel González Molera + Micah MacKenzie
+     UPF portraits + BCC landscapes handled separately
+     Scoped under .cert-section — zero CSS bleed.
+     ============================================================ -->
+
+<style>
+.cert-section,
+.cert-section *,
+.cert-section *::before,
+.cert-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cert-section {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #f8f9fc;
+  border-top: 1.5px solid #e2e6f0;
+  width: 100%;
+  padding: 72px 24px 80px;
+}
+
+/* ── INNER ── */
+.cert-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.cert-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.cert-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a56db;
+  margin-bottom: 16px;
+}
+.cert-eyebrow-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #1a56db;
+  flex-shrink: 0;
+}
+
+.cert-heading {
+  font-size: clamp(30px, 6vw, 54px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+  color: #0a0a0a;
+  margin-bottom: 16px;
+}
+
+.cert-hl {
+  display: inline;
+  background: #ddeafb;
+  color: #0d2d5e;
+  padding: 2px 10px 5px;
+  border-radius: 7px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.cert-sub {
+  font-size: clamp(15px, 2.1vw, 18px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5c637a;
+  max-width: 600px;
+  margin: 0 auto 22px;
+}
+.cert-sub strong { color: #0a0a0a; font-weight: 600; }
+
+/* trust strip */
+.cert-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 28px;
+}
+.cert-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d2d5e;
+}
+.cert-trust-item svg { color: #1a56db; flex-shrink: 0; }
+
+/* divider */
+.cert-divider {
+  width: 48px;
+  height: 3px;
+  background: #c7d9f8;
+  border-radius: 2px;
+  margin: 36px auto 44px;
+}
+
+/* ══════════════════════════════════════════
+   DOCTOR BLOCKS — one per chiropractor
+   ══════════════════════════════════════════ */
+.cert-doctor-block {
+  margin-bottom: 52px;
+}
+.cert-doctor-block:last-child { margin-bottom: 0; }
+
+/* Doctor name label */
+.cert-doc-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.cert-doc-label-bar {
+  width: 4px;
+  height: 28px;
+  border-radius: 2px;
+  background: #0d2d5e;
+  flex-shrink: 0;
+}
+.cert-doc-name {
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: -.5px;
+}
+.cert-doc-role {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8892a4;
+  margin-top: 2px;
+}
+
+/* two-col cert row per doctor */
+.cert-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ── INDIVIDUAL CERT CARD ── */
+.cert-card {
+  background: #fff;
+  border: 1.5px solid #e2e6f0;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .25s ease, border-color .25s ease, transform .2s ease;
+}
+.cert-card:hover {
+  box-shadow: 0 12px 40px rgba(13,45,94,.12);
+  border-color: #b8d0f8;
+  transform: translateY(-4px);
+}
+
+/* image wrapper — aspect ratio adapts per cert type */
+.cert-card-img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #f0f4fa;
+}
+
+/* Portrait certs (UPF — tall) */
+.cert-card-img--portrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* Landscape certs (BCC — wide) */
+.cert-card-img--landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.cert-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .4s ease;
+}
+.cert-card:hover .cert-card-img img {
+  transform: scale(1.03);
+}
+
+/* verified ribbon */
+.cert-ribbon {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: #0d2d5e;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+/* card footer */
+.cert-card-footer {
+  padding: 16px 18px;
+  border-top: 1px solid #edf0f7;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cert-card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a0a0a;
+  line-height: 1.3;
+}
+.cert-card-issuer {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8892a4;
+  line-height: 1.4;
+}
+.cert-card-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a56db;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+/* separator between doctors */
+.cert-sep {
+  width: 100%;
+  height: 1px;
+  background: #e2e6f0;
+  margin: 44px 0;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .cert-section { padding: 52px 16px 60px; }
+  .cert-header  { margin-bottom: 32px; }
+  .cert-divider { margin: 28px auto 36px; }
+
+  .cert-pair {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* on mobile landscape certs look fine as-is,
+     portrait certs reduce their ratio so they're not too tall */
+  .cert-card-img--portrait  { aspect-ratio: 2 / 3; }
+  .cert-card-img--landscape { aspect-ratio: 16 / 9; }
+
+  .cert-card { border-radius: 12px; }
+  .cert-sep  { margin: 32px 0; }
+}
+
+/* ── SCROLL REVEAL ── */
+.cert-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.cert-reveal.cert-visible { opacity: 1; transform: none; }
+
+.cert-pair .cert-card:nth-child(2) { transition-delay: .1s; }
+</style>
+
+
+<section class="cert-section" aria-labelledby="cert-heading">
+  <div class="cert-inner">
+
+    <!-- HEADER -->
+    <header class="cert-header cert-reveal">
+
+      <div class="cert-eyebrow">
+        <span class="cert-eyebrow-dot" aria-hidden="true"></span>
+        Credentials &amp; Certifications
+        <span class="cert-eyebrow-dot" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="cert-heading" id="cert-heading">
+        Certified. Verified. <span class="cert-hl">Trusted.</span>
+      </h2>
+
+      <p class="cert-sub">
+        Every certificate displayed here is officially awarded and
+        academically accredited.
+        <strong>Two doctors. Two institutions. One unwavering
+        standard of clinical excellence</strong> — so you know
+        exactly who is treating you and why you can trust them.
+      </p>
+
+      <div class="cert-trust-row" aria-label="Credential highlights">
+        <span class="cert-trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Universitat Pompeu Fabra, Barcelona
+        </span>
+        <span class="cert-trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Barcelona College of Chiropractic
+        </span>
+        <span class="cert-trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          300 ECTS Clinical Programme
+        </span>
+      </div>
+
+    </header>
+
+    <div class="cert-divider cert-reveal" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════
+         DOCTOR 1 — Anabel González Molera
+         ══════════════════════════ -->
+    <div class="cert-doctor-block cert-reveal">
+
+      <div class="cert-doc-label">
+        <div class="cert-doc-label-bar" aria-hidden="true"></div>
+        <div>
+          <div class="cert-doc-name">Anabel González Molera</div>
+          <div class="cert-doc-role">Associate Chiropractor &nbsp;·&nbsp; DC</div>
+        </div>
+      </div>
+
+      <div class="cert-pair" role="list" aria-label="Anabel González Molera's certificates">
+
+        <!-- UPF — Máster en Quiropráctica (portrait) -->
+        <div class="cert-card cert-reveal" role="listitem">
+          <div class="cert-card-img cert-card-img--portrait">
+            <img
+              src="images/cert-anabel-upf.webp"
+              alt="Máster en Quiropráctica — Universitat Pompeu Fabra — awarded to Anabel González Molera, October 2018"
+              loading="lazy"
+            >
+            <div class="cert-ribbon" aria-label="Verified credential">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-card-name">Máster en Quiropráctica</span>
+            <span class="cert-card-issuer">Universitat Pompeu Fabra, Barcelona</span>
+            <span class="cert-card-year">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              18 October 2018 &nbsp;·&nbsp; 60 ECTS
+            </span>
+          </div>
+        </div>
+
+        <!-- BCC — Título Superior Privado (landscape) -->
+        <div class="cert-card cert-reveal" role="listitem">
+          <div class="cert-card-img cert-card-img--landscape">
+            <img
+              src="images/cert-anabel-bcc.webp"
+              alt="Título Superior Privado en Quiropráctica — Barcelona College of Chiropractic — awarded to Anabel González Molera, November 2018"
+              loading="lazy"
+            >
+            <div class="cert-ribbon" aria-label="Verified credential">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-card-name">Título Superior Privado en Quiropráctica</span>
+            <span class="cert-card-issuer">Barcelona College of Chiropractic (BCC)</span>
+            <span class="cert-card-year">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              15 November 2018 &nbsp;·&nbsp; 300 ECTS
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /doctor 1 -->
+
+    <div class="cert-sep cert-reveal" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════
+         DOCTOR 2 — Micah MacKenzie
+         ══════════════════════════ -->
+    <div class="cert-doctor-block cert-reveal">
+
+      <div class="cert-doc-label">
+        <div class="cert-doc-label-bar" aria-hidden="true"></div>
+        <div>
+          <div class="cert-doc-name">Micah MacKenzie</div>
+          <div class="cert-doc-role">Lead Chiropractor &nbsp;·&nbsp; DC</div>
+        </div>
+      </div>
+
+      <div class="cert-pair" role="list" aria-label="Micah MacKenzie's certificates">
+
+        <!-- UPF — Master's Degree in Chiropractic (portrait) -->
+        <div class="cert-card cert-reveal" role="listitem">
+          <div class="cert-card-img cert-card-img--portrait">
+            <img
+              src="images/cert-micah-upf.webp"
+              alt="Master's Degree in Chiropractic — Universitat Pompeu Fabra — awarded to Micah MacKenzie, October 2018"
+              loading="lazy"
+            >
+            <div class="cert-ribbon" aria-label="Verified credential">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-card-name">Master's Degree in Chiropractic</span>
+            <span class="cert-card-issuer">Universitat Pompeu Fabra, Barcelona</span>
+            <span class="cert-card-year">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              18 October 2018 &nbsp;·&nbsp; 60 ECTS
+            </span>
+          </div>
+        </div>
+
+        <!-- BCC — Título Superior Privado (landscape) -->
+        <div class="cert-card cert-reveal" role="listitem">
+          <div class="cert-card-img cert-card-img--landscape">
+            <img
+              src="images/cert-micah-bcc.webp"
+              alt="Título Superior Privado en Quiropráctica — Barcelona College of Chiropractic — awarded to Micah MacKenzie, November 2018"
+              loading="lazy"
+            >
+            <div class="cert-ribbon" aria-label="Verified credential">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-card-name">Título Superior Privado en Quiropráctica</span>
+            <span class="cert-card-issuer">Barcelona College of Chiropractic (BCC)</span>
+            <span class="cert-card-year">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              15 November 2018 &nbsp;·&nbsp; 300 ECTS
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /doctor 2 -->
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.cert-reveal');
+  if (!els.length) return;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('cert-visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  els.forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+<!-- â”€â”€â”€ TEAM SECTION â”€â”€â”€ -->
+<section class="sec sec--gray tm-section" aria-labelledby="tm-heading">
+  <header class="sec-header reveal">
+    <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Meet the Team<span class="eyebrow-dot" aria-hidden="true"></span></div>
+    <h2 class="sec-heading" id="tm-heading">The People <span class="chip">Behind</span><br>Your Relief.</h2>
+    <p class="sec-sub">Two dedicated doctors. One shared mission ” to get you out of pain and back to your life, without surgery or medication.</p>
+  </header>
+  <div class="tm-blocks">
+    <!-- DOCTOR 1 ” BLUE -->
+    <div class="tm-block tm-block--blue reveal" aria-labelledby="tm-doc1-name">
+      <div class="tm-block-text">
+        <div class="tm-doc-label"><span class="tm-doc-label-dot" aria-hidden="true"></span>Lead Chiropractor</div>
+        <h3 class="tm-doc-name" id="tm-doc1-name">Dr. Anabel <span class="chip--glass chip">González Molera</span></h3>
+        <p class="tm-doc-title">Doctor of Chiropractic, DC</p>
+        <div class="tm-divider" aria-hidden="true"></div>
+        <p class="tm-doc-bio">Esplugues de Llobregat is Anabel's hometown. Anabel's first contact with chiropractic was at the age of 16 through a friend who had very intense pain. After seeing the amazing results of chiropractic adjustments, she decided to become a chiropractor to help people on their path to wellness.</p>
+        <div class="tm-credentials" role="list" aria-label="Credentials">
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Board Certified DC</span>
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8 Years Experience</span>
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Spinal Decompression</span>
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>750+ Patients Treated</span>
+        </div>
+        <div class="tm-stats" role="list" aria-label="Key statistics">
+          <div class="tm-stat" role="listitem"><span class="tm-stat-num">8</span><span class="tm-stat-label">Years in<br>Practice</span></div>
+          <div class="tm-stat" role="listitem"><span class="tm-stat-num">750+</span><span class="tm-stat-label">Patients<br>Treated</span></div>
+          <div class="tm-stat" role="listitem"><span class="tm-stat-num">4.9★</span><span class="tm-stat-label">Google<br>Rating</span></div>
+        </div>
+      </div>
+      <div class="tm-block-img" role="img" aria-label="Photo of Anabel González Molera">
+        <img src="images/optimized/image00010.webp" alt="Dr. Anabel González Molera" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+    </div>
+    <!-- DOCTOR 2 ” WHITE -->
+    <div class="tm-block tm-block--white tm-block--reversed reveal" aria-labelledby="tm-doc2-name">
+      <div class="tm-block-img" role="img" aria-label="Photo of Micah MacKenzie">
+        <img src="images/optimized/_MG_1366_edited_edited.webp" alt="Dr. Micah MacKenzie" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div class="tm-block-text">
+        <div class="tm-doc-label"><span class="tm-doc-label-dot" aria-hidden="true"></span>Associate Chiropractor</div>
+        <h3 class="tm-doc-name" id="tm-doc2-name">Dr. Micah <span class="chip">MacKenzie</span></h3>
+        <p class="tm-doc-title">Doctor of Chiropractic, DC</p>
+        <div class="tm-divider" aria-hidden="true"></div>
+        <p class="tm-doc-bio">Micah is a second-generation Swiss chiropractor who has been working for 8 years in Ireland, England and Switzerland. He grew up in a chiropractic family as his father Paul Lewis MacKenzie was also a chiropractor. He specializes in working with athletes and working professionals to help them achieve their health goals.</p>
+        <div class="tm-credentials" role="list" aria-label="Credentials">
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Board Certified DC</span>
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8 Years Experience</span>
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Sports &amp; Nerve Rehab</span>
+          <span class="tm-cred-pill" role="listitem"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.95-1.57l1.65-8.43H6"/></svg>Sciatica Specialist</span>
+        </div>
+        <div class="tm-stats" role="list" aria-label="Key statistics">
+          <div class="tm-stat" role="listitem"><span class="tm-stat-num">8</span><span class="tm-stat-label">Years in<br>Practice</span></div>
+          <div class="tm-stat" role="listitem"><span class="tm-stat-num">3K+</span><span class="tm-stat-label">Patients<br>Helped</span></div>
+          <div class="tm-stat" role="listitem"><span class="tm-stat-num">4.9★</span><span class="tm-stat-label">Patient<br>Reviews</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Team CTA -->
+  <div class="tm-cta-wrap reveal" role="region" aria-label="Book an appointment">
+    <p class="tm-cta-eyebrow">Ready to Start?</p>
+    <h3 class="tm-cta-heading">Meet the team.<br>Feel better this week.</h3>
+    <p class="tm-cta-sub">Same-week appointments available. One call is all it takes. No commitment, no pressure ” just relief.</p>
+    <a href="tel:+34625040584" class="tm-btn-call" aria-label="Tap to call 625 04 05 84">
+      <span class="tm-call-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d2d5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 18.85a19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.72 2h3a2 2 0 012 1.72c.13.96.36 1.9.66 2.81a2 2 0 01-.45 2.11L8.83 9.56A16 16 0 0015 15.64l1.1-1.1a2 2 0 012.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0122 16.92z"/></svg></span>
+      <span class="tm-call-text"><span class="tm-call-instruction">Tap to Call Us Now</span><span class="tm-call-number">625 04 05 84</span></span>
+      <svg class="tm-call-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+<!-- â”€â”€â”€ SERVICES SECTION â”€â”€â”€ -->
+<section class="sec sec--gray svs-section" aria-labelledby="svs-heading">
+  <header class="sec-header reveal">
+    <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>What We Treat<span class="eyebrow-dot" aria-hidden="true"></span></div>
+    <h2 class="sec-heading" id="svs-heading" style="font-size:clamp(32px,7vw,60px)">Every Pain Has<br>a <span class="chip">Solution.</span></h2>
+    <p class="sec-sub" style="max-width:580px">From lower back pain and sciatica to neck stiffness and chronic headaches ” we've treated it thousands of times. <strong>No surgery. No medication. Just results.</strong></p>
+  </header>
+  <div class="svs-blocks">
+    <!-- SERVICE 1 ” BLUE -->
+    <div class="svs-block svs-block--blue reveal" aria-labelledby="svs-s1-heading">
+      <div class="svs-block-text">
+        <div class="svs-svc-label"><span class="svs-svc-label-dot" aria-hidden="true"></span>Core Treatment</div>
+        <h3 class="svs-svc-heading" id="svs-s1-heading">Spinal Adjustment<br>&amp; <span class="chip--glass chip">Alignment</span></h3>
+        <p class="svs-svc-body">The foundation of everything we do. Misaligned vertebrae put pressure on your nerves and cause pain, stiffness, and restricted movement. We locate the exact source and correct it with precise, gentle adjustments ” most patients feel the difference immediately.</p>
+        <div class="svs-pills" role="list" aria-label="Conditions treated">
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Lower back pain</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Postural problems</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Restricted movement</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Morning stiffness</span>
+        </div>
+      </div>
+      <div class="svs-block-cards" aria-hidden="true"><div class="svs-stack">
+        <div class="svs-card svs-card--back"><img src="images/optimized/image00002.webp" alt="Service" style="width: 100%; height: 100%; object-fit: cover; display: block;"><span class="svs-ph-lbl">Photo 1</span></div></div>
+        <div class="svs-card svs-card--front"><img src="images/optimized/image00004.webp" alt="Service" style="width: 100%; height: 100%; object-fit: cover; display: block;"><span class="svs-ph-lbl">Photo 2</span></div></div>
+      </div>
+    <!-- SERVICE 2 ” WHITE -->
+    <div class="svs-block svs-block--white reveal" aria-labelledby="svs-s2-heading">
+      <div class="svs-block-text">
+        <div class="svs-svc-label"><span class="svs-svc-label-dot" aria-hidden="true"></span>Pain Relief</div>
+        <h3 class="svs-svc-heading" id="svs-s2-heading">Neck Pain &amp;<br><span class="chip">Headache</span> Relief</h3>
+        <p class="svs-svc-body">Most neck pain and tension headaches start in the cervical spine ” not in your neck muscles. We treat the root cause directly, not the symptom, so the relief lasts instead of cycling every few weeks. Patients with daily headaches often see significant improvement within 2“3 visits.</p>
+        <div class="svs-pills" role="list" aria-label="Conditions treated">
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Chronic neck stiffness</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Tension headaches</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Shoulder &amp; trap pain</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Migraines</span>
+        </div>
+      </div>
+      <div class="svs-block-cards" aria-hidden="true"><div class="svs-single-wrap"><div class="svs-card-single svs-card-single--cw"><img src="images/optimized/image00009.webp" alt="Service" style="width: 100%; height: 100%; object-fit: cover; display: block;"><span class="svs-ph-lbl">Photo</span></div></div></div></div>
+
+        <!-- SERVICE 3 ” BLUE -->
+    <div class="svs-block svs-block--blue reveal" aria-labelledby="svs-s3-heading">
+      <div class="svs-block-text">
+        <div class="svs-svc-label"><span class="svs-svc-label-dot" aria-hidden="true"></span>Nerve Relief</div>
+        <h3 class="svs-svc-heading" id="svs-s3-heading">Sciatica &amp;<br><span class="chip--glass chip">Nerve Pain</span> Treatment</h3>
+        <p class="svs-svc-body">That sharp, shooting pain down your leg, hip, or into your foot isn't just "back pain" ” it's nerve compression that only worsens without targeted care. We decompress the affected nerve and restore proper motion so you can walk, sit, and sleep without that burning, stabbing sensation.</p>
+        <div class="svs-pills" role="list" aria-label="Conditions treated">
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Shooting leg pain</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Hip pain &amp; numbness</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Piriformis syndrome</span>
+          <span class="svs-pill" role="listitem"><svg class="svs-pill-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Disc herniation pain</span>
+        </div>
+      </div>
+      <div class="svs-block-cards" aria-hidden="true"><div class="svs-single-wrap"><div class="svs-card-single svs-card-single--ccw"><img src="images/optimized/image00003.webp" alt="Service" style="width: 100%; height: 100%; object-fit: cover; display: block;"><span class="svs-ph-lbl">Photo</span></div></div></div></div>
+    </div>
+
+    </div>
+
+  
+     
+
+
+    
+    
+   
+ 
+</section>
+
+<!-- â”€â”€â”€ FINAL CTA â”€â”€â”€ -->
+<section class="sec sec--white fc-section" aria-labelledby="fc-heading">
+  <div class="fc-inner">
+    <div class="eyebrow reveal"><span class="eyebrow-dot" aria-hidden="true"></span>Take the First Step<span class="eyebrow-dot" aria-hidden="true"></span></div>
+    <h2 class="fc-heading reveal" id="fc-heading">Ready to Feel <span class="chip--light chip">Better?</span></h2>
+    <p class="fc-sub reveal">Same-week appointments available. <strong>No commitment, no referral, no pressure</strong> ” just the relief you've been looking for.</p>
+    <div class="fc-buttons reveal" role="group" aria-label="Contact options">
+      <a href="tel:+34625040584" class="fc-btn-call" aria-label="Tap to call 625 04 05 84">
+        <span class="fc-call-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 18.85a19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.72 2h3a2 2 0 012 1.72c.13.96.36 1.9.66 2.81a2 2 0 01-.45 2.11L8.83 9.56A16 16 0 0015 15.64l1.1-1.1a2 2 0 012.11-.45c.91.3 1.85.52 2.81.65A2 2 0 0122 16.92z"/></svg></span>
+        <span class="fc-call-text"><span class="fc-call-hint">Tap to Call Us Now</span><span class="fc-call-num">625 04 05 84</span></span>
+        <svg class="fc-call-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2&" class="fc-btn-book" aria-label="Book a meeting online">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Meeting
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     UNIFIED SCRIPT ” replaces 6 separate scripts
+     ═══════════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  /* â”€â”€ 1. UNIFIED SCROLL REVEAL â”€â”€â”€ */
+  var revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    revealEls.forEach(function(el) { obs.observe(el); });
+  }
+
+  /* â”€â”€ 2. QUIZ â”€â”€â”€ */
+  var answers = {};
+  var results = {
+    relief: { t: "You're a strong candidate for targeted spinal adjustment.", b: "For fast relief, we start with a full postural assessment and a targeted adjustment on your very first visit. No medication. No surgery. Most patients with your profile leave feeling noticeably better the same day." },
+    sleep:  { t: "Nerve compression is very likely disrupting your sleep.", b: "Spinal tension and nerve pressure are the most common causes of pain that keeps you awake. We identify the exact source on visit one and begin treatment the same day ” no medication, no surgery required." },
+    move:   { t: "Corrective adjustment and mobility work is exactly what you need.", b: "Restoring your range of motion is a core part of what we do. We combine precise spinal alignment with targeted mobility work ” no medication, no surgery, just your body moving the way it was designed to." },
+    avoid:  { t: "Chiropractic care is the leading non-surgical, drug-free alternative.", b: "Anabel González has helped hundreds of patients avoid surgery and medication their other doctors had already recommended. We'll show you a clear, evidence-based plan on your very first visit." }
+  };
+
+  document.querySelectorAll('.quiz-opt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var opts = btn.closest('.quiz-opts');
+      opts.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+
+      var resultType = btn.dataset.result;
+      if (resultType) {
+        document.getElementById('prog').style.width = '100%';
+        setTimeout(function() {
+          document.getElementById('step3').classList.remove('active');
+          var r = results[resultType];
+          document.getElementById('result-title').textContent = r.t;
+          document.getElementById('result-body').textContent = r.b;
+          var rEl = document.getElementById('quiz-result');
+          rEl.classList.add('show');
+          rEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 260);
+      } else {
+        answers[btn.dataset.key] = btn.dataset.val;
+        var next = parseInt(btn.dataset.next, 10);
+        setTimeout(function() {
+          document.querySelectorAll('.quiz-step').forEach(function(s) { s.classList.remove('active'); });
+          var el = document.getElementById('step' + next);
+          if (el) {
+            el.classList.add('active');
+            var pct = next === 2 ? 66 : 100;
+            var p = document.getElementById('prog');
+            p.style.width = pct + '%';
+            p.parentElement.setAttribute('aria-valuenow', pct);
+          }
+        }, 260);
+      }
+    });
+  });
+
+  /* â”€â”€ 3. VIDEO PLACEHOLDER â”€â”€â”€ */
+  var playBtn = document.getElementById('sp-play-btn');
+  var fill = document.getElementById('sp-bar-fill');
+  var timeEl = document.getElementById('sp-time');
+  if (playBtn && fill && timeEl) {
+    var totalSecs = 154, playing = false, current = 0, interval = null;
+    function fmt(s) { return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); }
+    playBtn.addEventListener('click', function() {
+      if (!playing) {
+        playing = true;
+        playBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+        interval = setInterval(function() {
+          current = Math.min(current + .25, totalSecs);
+          fill.style.width = (current/totalSecs*100) + '%';
+          timeEl.textContent = fmt(current) + ' / ' + fmt(totalSecs);
+          if (current >= totalSecs) {
+            clearInterval(interval); playing = false; current = 0;
+            playBtn.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>';
+            fill.style.width = '0%'; timeEl.textContent = '0:00 / 2:34';
+          }
+        }, 250);
+      } else {
+        playing = false; clearInterval(interval);
+        playBtn.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>';
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
+
