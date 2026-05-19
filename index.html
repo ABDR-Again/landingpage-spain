@@ -18,6 +18,16 @@
 
   gtag('config', 'G-1B49TVT4PJ');
 </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18118351966"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18118351966');
+</script>
 <!-- Critical CSS: inlined for instant hero paint -->
 <style>/* ═══════════════════════════════════════════════
    CRITICAL CSS ” Above-the-fold only
@@ -1478,7 +1488,51 @@ function toggleLanguage() {
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+     ============================================ -->
+<script>
+  // ── 1. PHONE CALL TRACKING (Primary Conversion) ──
+  // Catches ALL tel: links on the page automatically
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+    link.addEventListener('click', function() {
 
+      // Google Analytics 4 — Phone Call Event
+      gtag('event', 'phone_call_click', {
+        'event_category': 'Primary Conversion',
+        'event_label': 'Phone Call — ' + this.href,
+        'value': 1
+      });
+
+      // Google Ads — Phone Call Conversion
+      // ⚠️ Replace AW-XXXXXXXXX/XXXXXXXXXXXX with your real IDs
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18118351966'
+      });
+
+    });
+  });
+
+
+  // ── 2. BOOKING BUTTON TRACKING (Secondary Conversion) ──
+  // Catches ALL booking links on the page automatically
+  document.querySelectorAll('a[href*="practicehub.io"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+
+      // Google Analytics 4 — Booking Click Event
+      gtag('event', 'booking_click', {
+        'event_category': 'Secondary Conversion',
+        'event_label': 'Booking Button Clicked',
+        'value': 1
+      });
+
+      // Google Ads — Booking Conversion
+      // ⚠️ Replace AW-XXXXXXXXX/YYYYYYYYYYYY with your real IDs (different from above)
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18118351966'
+      });
+
+    });
+  });
+</script>
 </body>
 </html>
 
