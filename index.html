@@ -1490,15 +1490,31 @@ function toggleLanguage() {
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
      ============================================ -->
 <script>
-  // ── GOOGLE ADS: Phone Call Conversion Function ──
-  function gtag_report_conversion(url) {
+  // ── GOOGLE ADS: Phone Call Conversion ──
+  function gtag_report_phone_conversion(url) {
     var callback = function () {
       if (typeof(url) != 'undefined') {
         window.location = url;
       }
     };
     gtag('event', 'conversion', {
-      'send_to': 'AW-18118351966/TsGACL-p668cEN64wL9D', // ✅ real ID
+      'send_to': 'AW-18118351966/TsGACL-p668cEN64wL9D',
+      'event_callback': callback
+    });
+    return false;
+  }
+
+  // ── GOOGLE ADS: Booking Conversion ──
+  function gtag_report_booking_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18118351966/dgLMCL6F7K8cEN64wL9D',
+      'value': 1.0,
+      'currency': 'EUR',
       'event_callback': callback
     });
     return false;
@@ -1506,7 +1522,7 @@ function toggleLanguage() {
 
   document.addEventListener('DOMContentLoaded', function() {
 
-    // ── 1. PHONE CALL TRACKING (Primary) ──
+    // ── 1. PHONE CALL TRACKING (Primary Conversion) ──
     document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
       link.addEventListener('click', function() {
 
@@ -1517,13 +1533,13 @@ function toggleLanguage() {
           'value': 1
         });
 
-        // Google Ads Conversion
-        gtag_report_conversion(this.href);
+        // Google Ads
+        gtag_report_phone_conversion(this.href);
 
       });
     });
 
-    // ── 2. BOOKING BUTTON TRACKING (Secondary) ──
+    // ── 2. BOOKING BUTTON TRACKING (Secondary Conversion) ──
     document.querySelectorAll('a[href*="practicehub.io"]').forEach(function(link) {
       link.addEventListener('click', function() {
 
@@ -1534,11 +1550,8 @@ function toggleLanguage() {
           'value': 1
         });
 
-        // Google Ads Conversion
-        // ⚠️ Replace YYYYYYYYYYYY once you create booking conversion in Google Ads
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18118351966/YYYYYYYYYYYY'
-        });
+        // Google Ads
+        gtag_report_booking_conversion(this.href);
 
       });
     });
