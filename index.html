@@ -665,8 +665,7 @@ body {
     </div>
     <div class="ofs-grid" role="list" aria-label="Galería de fotos de la consulta">
       <div class="ofs-grid-cell reveal" role="listitem"><div class="ofs-img-ph" aria-label="Main treatment room"><div class="ofs-img-ph-icon" aria-hidden="true"></div><img src="./images/optimized/IMG_20240902_130352.jpg.webp" alt="Adjustment Table" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 12px;"></div><div class="ofs-cell-overlay" aria-hidden="true"><span class="ofs-cell-caption">Sala de Tratamiento Principal</span></div></div>
-      <div class="ofs-grid-cell reveal" role="listitem"><img src="./images/optimized/IMG20240830094600.jpg.webp" alt="Reception Area" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;"><span class="ofs-img-ph-label">Zona de Recepción<br><small style="opacity:.55;font-weight:400">Reemplazar con foto real</small></span></div><div class="ofs-cell-overlay" aria-hidden="true"><span class="ofs-cell-caption">Zona de Recepción</span></div></div>
-     
+      <div class="ofs-grid-cell reveal" role="listitem"><img src="./images/optimized/IMG20240830094600.jpg.webp" alt="Reception Area" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;"><span class="ofs-img-ph-label">Zona de Recepción<br><small style="opacity:.55;font-weight:400">Reemplazar con foto real</small></span><div class="ofs-cell-overlay" aria-hidden="true"><span class="ofs-cell-caption">Zona de Recepción</span></div></div>
     </div>
   </div>
 </section>
@@ -1186,7 +1185,7 @@ body {
     <!-- DOCTOR 2 ” WHITE -->
     <div class="tm-block tm-block--white tm-block--reversed reveal" aria-labelledby="tm-doc2-name">
       <div class="tm-block-img" role="img" aria-label="Photo of Micah MacKenzie">
-        <img src="./images/optimized/_MG_1366_edited_edited.webp" alt="Micah MacKenzie" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <img src="./images/optimized/doctor2.webp" alt="Micah MacKenzie" style="width: 100%; height: 100%; object-fit: cover; display: block;">
       </div>
       <div class="tm-block-text">
         <div class="tm-doc-label"><span class="tm-doc-label-dot" aria-hidden="true"></span>Quiropráctico Asociado</div>
@@ -1400,6 +1399,76 @@ body {
   }
 })();
 </script>
+<!-- ─── LANGUAGE TOGGLE ─── -->
+<div id="google_translate_element" style="display:none;"></div>
+<button id="lang-toggle" class="lang-toggle-btn notranslate" onclick="toggleLanguage()" aria-label="Translate Website">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+  </svg>
+  <span id="lang-toggle-text">Translate to English</span>
+</button>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'es,en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+let currentAppLang = 'es';
+
+function updateBookingLinks(lang) {
+  var links = document.querySelectorAll('a[href^="https://quiroespluges.neptune.practicehub.io/p/booking/"]');
+  links.forEach(function(link) {
+    if (lang === 'en') {
+      link.href = "https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2";
+    } else {
+      link.href = "https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2&locale=es&";
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var match = document.cookie.match(/googtrans=\/es\/en/);
+  if (match) {
+    currentAppLang = 'en';
+    document.getElementById('lang-toggle-text').innerText = 'Traducir a Español';
+    updateBookingLinks('en');
+  }
+});
+
+function toggleLanguage() {
+  var select = document.querySelector('.goog-te-combo');
+  var target = currentAppLang === 'es' ? 'en' : 'es';
+  
+  if (!select) {
+    document.cookie = 'googtrans=/es/' + target + '; path=/';
+    document.cookie = 'googtrans=/es/' + target + '; path=/; domain=' + window.location.hostname;
+    window.location.reload();
+    return;
+  }
+  
+  var textSpan = document.getElementById('lang-toggle-text');
+  if (currentAppLang === 'es') {
+    select.value = 'en';
+    currentAppLang = 'en';
+    textSpan.innerText = 'Traducir a Español';
+  } else {
+    select.value = 'es';
+    currentAppLang = 'es';
+    textSpan.innerText = 'Translate to English';
+  }
+  select.dispatchEvent(new Event('change'));
+  updateBookingLinks(currentAppLang);
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
 
