@@ -1298,38 +1298,42 @@ body {
     </div>
   </div>
 </section>
-
-<!-- ═══════════════════════════════════════════════
-     UNIFIED SCRIPT ” replaces 6 separate scripts
-     ═══════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════
+     SCROLL REVEAL + QUIZ + VIDEO
+     ═══════════════════════════════════════════ -->
 <script>
 (function() {
   'use strict';
 
-  /* â”€â”€ 1. UNIFIED SCROLL REVEAL â”€â”€â”€ */
+  /* ── 1. SCROLL REVEAL ── */
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
       });
     }, { threshold: 0.06 });
     revealEls.forEach(function(el) { obs.observe(el); });
   }
 
-  /* â”€â”€ 2. QUIZ â”€â”€â”€ */
+  /* ── 2. QUIZ ── */
   var answers = {};
   var results = {
     relief: { t: "Eres un buen candidato para el ajuste espinal específico.", b: "Para un alivio rápido, comenzamos con una evaluación postural completa y un ajuste específico en tu primera visita. Sin medicación. Sin cirugía. La mayoría de pacientes con tu perfil salen notablemente mejor el mismo día." },
-    sleep:  { t: "Es muy probable que la compresión nerviosa esté alterando tu sueño.", b: "La tensión espinal y la presión nerviosa son las causas más comunes del dolor que te mantiene despierto. Identificamos la fuente exacta en la primera visita y comenzamos el tratamiento el mismo día ” sin necesidad de medicación ni cirugía." },
-    move:   { t: "El ajuste correctivo y el trabajo de movilidad es exactamente lo que necesitas.", b: "Restaurar tu rango de movimiento es una parte fundamental de lo que hacemos. Combinamos la alineación espinal precisa con trabajo de movilidad específico ” sin medicación, sin cirugía, solo tu cuerpo moviéndose de la forma para la que fue diseñado." },
+    sleep:  { t: "Es muy probable que la compresión nerviosa esté alterando tu sueño.", b: "La tensión espinal y la presión nerviosa son las causas más comunes del dolor que te mantiene despierto. Identificamos la fuente exacta en la primera visita y comenzamos el tratamiento el mismo día — sin necesidad de medicación ni cirugía." },
+    move:   { t: "El ajuste correctivo y el trabajo de movilidad es exactamente lo que necesitas.", b: "Restaurar tu rango de movimiento es una parte fundamental de lo que hacemos. Combinamos la alineación espinal precisa con trabajo de movilidad específico — sin medicación, sin cirugía, solo tu cuerpo moviéndose de la forma para la que fue diseñado." },
     avoid:  { t: "La quiropráctica es la principal alternativa no quirúrgica y sin fármacos.", b: "Anabel González ha ayudado a cientos de pacientes a evitar cirugías y medicaciones que otros médicos ya habían recomendado. Te mostraremos un plan claro y basado en evidencia en tu primera visita." }
   };
 
   document.querySelectorAll('.quiz-opt').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var opts = btn.closest('.quiz-opts');
-      opts.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); });
+      opts.querySelectorAll('.quiz-opt').forEach(function(b) {
+        b.classList.remove('selected');
+      });
       btn.classList.add('selected');
 
       var resultType = btn.dataset.result;
@@ -1348,7 +1352,9 @@ body {
         answers[btn.dataset.key] = btn.dataset.val;
         var next = parseInt(btn.dataset.next, 10);
         setTimeout(function() {
-          document.querySelectorAll('.quiz-step').forEach(function(s) { s.classList.remove('active'); });
+          document.querySelectorAll('.quiz-step').forEach(function(s) {
+            s.classList.remove('active');
+          });
           var el = document.getElementById('step' + next);
           if (el) {
             el.classList.add('active');
@@ -1362,13 +1368,15 @@ body {
     });
   });
 
-  /* â”€â”€ 3. VIDEO PLACEHOLDER â”€â”€â”€ */
+  /* ── 3. VIDEO PLACEHOLDER ── */
   var playBtn = document.getElementById('sp-play-btn');
-  var fill = document.getElementById('sp-bar-fill');
-  var timeEl = document.getElementById('sp-time');
+  var fill    = document.getElementById('sp-bar-fill');
+  var timeEl  = document.getElementById('sp-time');
   if (playBtn && fill && timeEl) {
     var totalSecs = 154, playing = false, current = 0, interval = null;
-    function fmt(s) { return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); }
+    function fmt(s) {
+      return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0');
+    }
     playBtn.addEventListener('click', function() {
       if (!playing) {
         playing = true;
@@ -1380,94 +1388,29 @@ body {
           if (current >= totalSecs) {
             clearInterval(interval); playing = false; current = 0;
             playBtn.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>';
-            fill.style.width = '0%'; timeEl.textContent = '0:00 / 2:34';
+            fill.style.width = '0%';
+            timeEl.textContent = '0:00 / 2:34';
           }
         }, 250);
       } else {
-        playing = false; clearInterval(interval);
+        playing = false;
+        clearInterval(interval);
         playBtn.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>';
       }
     });
   }
 })();
 </script>
-<!-- ─── LANGUAGE TOGGLE ─── -->
-<div id="google_translate_element" style="display:none;"></div>
-<button id="lang-toggle" class="lang-toggle-btn notranslate" onclick="toggleLanguage()" aria-label="Translate Website">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"></circle>
-    <line x1="2" y1="12" x2="22" y2="12"></line>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-  </svg>
-  <span id="lang-toggle-text">Translate to English</span>
-</button>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'es',
-    includedLanguages: 'es,en',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
-}
-
-let currentAppLang = 'es';
-
-function updateBookingLinks(lang) {
-  var links = document.querySelectorAll('a[href^="https://quiroespluges.neptune.practicehub.io/p/booking/"]');
-  links.forEach(function(link) {
-    if (lang === 'en') {
-      link.href = "https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2";
-    } else {
-      link.href = "https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2&locale=es&";
-    }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var match = document.cookie.match(/googtrans=\/es\/en/);
-  if (match) {
-    currentAppLang = 'en';
-    document.getElementById('lang-toggle-text').innerText = 'Traducir a Español';
-    updateBookingLinks('en');
-  }
-});
-
-function toggleLanguage() {
-  var select = document.querySelector('.goog-te-combo');
-  var target = currentAppLang === 'es' ? 'en' : 'es';
-  
-  if (!select) {
-    document.cookie = 'googtrans=/es/' + target + '; path=/';
-    document.cookie = 'googtrans=/es/' + target + '; path=/; domain=' + window.location.hostname;
-    window.location.reload();
-    return;
-  }
-  
-  var textSpan = document.getElementById('lang-toggle-text');
-  if (currentAppLang === 'es') {
-    select.value = 'en';
-    currentAppLang = 'en';
-    textSpan.innerText = 'Traducir a Español';
-  } else {
-    select.value = 'es';
-    currentAppLang = 'es';
-    textSpan.innerText = 'Translate to English';
-  }
-  select.dispatchEvent(new Event('change'));
-  updateBookingLinks(currentAppLang);
-}
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
-     ============================================ -->
+<!-- ═══════════════════════════════════════════
+     GOOGLE ADS CONVERSION FUNCTIONS
+     Defined first so nothing can call them
+     before they exist
+     ═══════════════════════════════════════════ -->
 <script>
-  // ── GOOGLE ADS: Phone Call Conversion ──
   function gtag_report_phone_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
+    var callback = function() {
+      if (typeof(url) != 'undefined') { window.location = url; }
     };
     gtag('event', 'conversion', {
       'send_to': 'AW-18118351966/TsGACL-p668cEN64wL9D',
@@ -1476,12 +1419,9 @@ function toggleLanguage() {
     return false;
   }
 
-  // ── GOOGLE ADS: Booking Conversion ──
   function gtag_report_booking_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
+    var callback = function() {
+      if (typeof(url) != 'undefined') { window.location = url; }
     };
     gtag('event', 'conversion', {
       'send_to': 'AW-18118351966/dgLMCL6F7K8cEN64wL9D',
@@ -1491,45 +1431,147 @@ function toggleLanguage() {
     });
     return false;
   }
+</script>
+
+<!-- ═══════════════════════════════════════════
+     LANGUAGE TOGGLE BUTTON
+     ═══════════════════════════════════════════ -->
+<div id="google_translate_element" style="display:none;"></div>
+<button id="lang-toggle" class="lang-toggle-btn notranslate"
+  onclick="toggleLanguage()" aria-label="Translate Website">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10
+             15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+  </svg>
+  <span id="lang-toggle-text">Translate to English</span>
+</button>
+
+<!-- ═══════════════════════════════════════════
+     TRANSLATE + TRACKING + AUTO LANG
+     ═══════════════════════════════════════════ -->
+<script>
+  /* ── Google Translate init ── */
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  var currentAppLang = 'es';
+
+  /* ── Update booking links language ── */
+  function updateBookingLinks(lang) {
+    document.querySelectorAll(
+      'a[href^="https://quiroespluges.neptune.practicehub.io/p/booking/"]'
+    ).forEach(function(link) {
+      link.href = lang === 'en'
+        ? "https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2"
+        : "https://quiroespluges.neptune.practicehub.io/p/booking/?lid=1&atid=2&locale=es&";
+    });
+  }
+
+  /* ── Manual toggle button ── */
+  function toggleLanguage() {
+    var select  = document.querySelector('.goog-te-combo');
+    var target  = currentAppLang === 'es' ? 'en' : 'es';
+    var textSpan = document.getElementById('lang-toggle-text');
+
+    if (!select) {
+      document.cookie = 'googtrans=/es/' + target + '; path=/';
+      document.cookie = 'googtrans=/es/' + target + '; path=/; domain=' + window.location.hostname;
+      window.location.reload();
+      return;
+    }
+
+    select.value = target;
+    currentAppLang = target;
+    if (textSpan) {
+      textSpan.innerText = target === 'en' ? 'Traducir a Español' : 'Translate to English';
+    }
+    select.dispatchEvent(new Event('change'));
+    updateBookingLinks(target);
+  }
+
+  /* ── ✅ FIX: Auto-switch for ?lang=en BEFORE page renders ──
+     Sets cookie immediately on page load (not waiting for
+     DOMContentLoaded) so Google Translate picks it up
+     on the SAME load — no Spanish flash ── */
+  (function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'en') {
+      document.cookie = 'googtrans=/es/en; path=/';
+      document.cookie = 'googtrans=/es/en; path=/; domain=' + window.location.hostname;
+    }
+  })();
 
   document.addEventListener('DOMContentLoaded', function() {
 
-    // ── 1. PHONE CALL TRACKING (Primary Conversion) ──
+    /* Restore state from cookie */
+    if (document.cookie.match(/googtrans=\/es\/en/)) {
+      currentAppLang = 'en';
+      var textSpan = document.getElementById('lang-toggle-text');
+      if (textSpan) textSpan.innerText = 'Traducir a Español';
+      updateBookingLinks('en');
+    }
+
+    /* If ?lang=en, also trigger widget directly */
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'en') {
+      var attempts = 0;
+      var checkTranslate = setInterval(function() {
+        attempts++;
+        var select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = 'en';
+          select.dispatchEvent(new Event('change'));
+          currentAppLang = 'en';
+          var textSpan = document.getElementById('lang-toggle-text');
+          if (textSpan) textSpan.innerText = 'Traducir a Español';
+          updateBookingLinks('en');
+          clearInterval(checkTranslate);
+        }
+        if (attempts > 20) clearInterval(checkTranslate);
+      }, 500);
+    }
+
+    /* ── Phone call tracking ── */
     document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
       link.addEventListener('click', function() {
-
-        // GA4 Event
         gtag('event', 'phone_call_click', {
           'event_category': 'Primary Conversion',
           'event_label': 'Phone Call',
           'value': 1
         });
-
-        // Google Ads
         gtag_report_phone_conversion(this.href);
-
       });
     });
 
-    // ── 2. BOOKING BUTTON TRACKING (Secondary Conversion) ──
+    /* ── Booking button tracking ── */
     document.querySelectorAll('a[href*="practicehub.io"]').forEach(function(link) {
       link.addEventListener('click', function() {
-
-        // GA4 Event
         gtag('event', 'booking_click', {
           'event_category': 'Secondary Conversion',
           'event_label': 'Booking Button Clicked',
           'value': 1
         });
-
-        // Google Ads
         gtag_report_booking_conversion(this.href);
-
       });
     });
 
   });
 </script>
+
+<!-- Google Translate library — load last, async -->
+<script async defer
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
 </body>
 </html>
 
