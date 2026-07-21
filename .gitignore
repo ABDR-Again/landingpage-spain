@@ -1,0 +1,18 @@
+# macOS / local files
+.DS_Store
+**/.DS_Store
+
+# Editor and temporary files
+.vscode/
+.idea/
+*.log
+*.tmp
+*.swp
+
+# Keep raw uploaded source images out of production Git.
+images/Images/
+
+# Production assets are intentionally tracked.
+!images/
+!images/optimized/
+!images/optimized/**
